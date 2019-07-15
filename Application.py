@@ -18,7 +18,6 @@ class Application(Frame):
         self.title = ''
         self.website = ''
         self.video = ''
-        # self.lay_fifth_box = ''
         self.window_init()
         self.widgets_init()
 
