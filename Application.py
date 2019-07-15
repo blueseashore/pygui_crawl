@@ -7,7 +7,6 @@ import requests
 from requests.exceptions import RequestException
 import re
 import os
-import time
 
 
 class Application(Frame):
@@ -122,14 +121,14 @@ class Application(Frame):
                 pattern = re.compile('<title>(.*?)</title>', re.S)
                 items = re.findall(pattern, response.text)
                 if len(items) > 0:
-                    self.title_entry.delete(0,END)
+                    self.title_entry.delete(0, END)
                     self.title = items[0]
                     self.title_entry.insert(0, items[0])
 
                 pattern = re.compile('<iframe src="http:\/\/player.jfrft.net\/index.php\?url=(.*?)"', re.S)
                 items = re.findall(pattern, response.text)
                 if len(items) > 0:
-                    self.video_entry.delete(0,END)
+                    self.video_entry.delete(0, END)
                     self.video = items[0]
                     self.video_entry.insert(0, items[0])
             else:
